@@ -1,0 +1,42 @@
+{
+  "name": "crystal-palace",
+  "displayName": "Crystal Palace",
+  "description": "Language extension for Crystal Palace Specification files",
+  "license": "MIT",
+  "version": "0.0.1",
+  "icon": "images/icon.png",
+  "engines": {
+    "vscode": "^1.107.0"
+  },
+  "author": {
+		"name": "Daniel Duggan",
+		"url": "https://x.com/_RastaMouse"
+	},
+  "repository": {
+		"type": "git",
+		"url": "https://github.com/rasta-mouse/crystal-palace-vsc.git"
+	},
+  "categories": [
+    "Programming Languages",
+    "Snippets"
+  ],
+  "contributes": {
+    "languages": [{
+      "id": "crystal-palace",
+      "aliases": ["Crystal Palace", "crystal-palace"],
+      "extensions": [".spec"],
+      "configuration": "./language-configuration.json"
+    }],
+    "grammars": [{
+      "language": "crystal-palace",
+      "scopeName": "source.spec",
+      "path": "./syntaxes/crystal-palace.tmLanguage.json"
+    }],
+    "snippets": [
+      {
+        "language": "crystal-palace",
+        "path": "./snippets/crystal-palace.json"
+      }
+    ]
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Crystal Palace",
+  "scopeName": "source.spec",
+  "patterns": [
+    { "include": "#comments" },
+    { "include": "#labels" },
+    { "include": "#keywords" },
+    { "include": "#options" },
+    { "include": "#variables" },
+    { "include": "#strings" },
+    { "include": "#numbers" }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [{
+          "name": "comment.line.number-sign.spec",
+          "match": "#.*$"
+        }]
+    },
+    "labels": {
+      "patterns": [{
+          "name": "entity.name.label.spec",
+          "match": "\\b(?:\\w+\\.)?(x86|x64):"
+        }]
+    },
+    "variables": {
+      "patterns": [{
+          "name": "variable.other.dollar.spec",
+          "match": "\\$[A-Za-z_][A-Za-z0-9_]*"
+        },
+        {
+          "name": "variable.other.percent.spec",
+          "match": "%[A-Za-z_][A-Za-z0-9_]*"
+        }]
+    },
+    "numbers": {
+      "patterns": [{
+          "name": "constant.numeric.spec",
+          "match": "\\b\\d+\\b"
+        }]
+    },
+    "strings": {
+      "patterns": [{
+          "name": "string.quoted.double.spec",
+          "match": "\"[^\"]*\""
+        }]
+    },
+    "options": {
+      "patterns": [{
+          "name": "keyword.other.option.spec",
+          "match": "\\+[A-Za-z]+"
+        }]
+    },
+    "keywords": {
+      "patterns": [{
+          "name": "keyword.control.spec",
+          "match": "\\b(addhook|attach|call|coffparse|dfr|disassemble|echo|export|exportfunc|filterhooks|fixbss|fixptrs|foreach|generate|import|load|link|linkfunc|merge|mergelib|next|optout|pack|patch|preplen|prepsum|preserve|protect|push|rc4|redirect|remap|resolve|run|set|setg|xor)\\b"
+        },
+        {
+          "name": "meta.command.make.spec",
+          "begin": "\\bmake\\b",
+          "beginCaptures": {
+            "0": {
+              "name": "keyword.control.make.spec"
+            }
+          },
+          "end": "$",
+          "patterns": [{
+              "name": "constant.language.make-target.spec",
+              "match": "\\b(coff|object|pic)\\b"
+            },
+            {
+              "name": "support.type.language.option.spec",
+              "match": "\\+(optimize|disco|mutate|gofirst)\\b"
+            },
+            {
+              "name": "invalid.illegal.make-argument.spec",
+              "match": "\\b(?!coff\\b|object\\b|pic\\b)\\w+\\b"
+            }]
+        }]
+    }
+  }
+}

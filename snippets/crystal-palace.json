@@ -1,0 +1,67 @@
+{
+  "Add Hook": {
+    "prefix": ["ah"],
+    "body": ["addhook \"${1:MOD}\\$${2:Func}\" \"${3:hook}\""],
+    "description": "Register MOD$Func hook for use with __resolve_hook() intrinsic."
+  },
+  "Add Hook Chain": {
+    "prefix": ["ahc"],
+    "body": ["addhook \"${1:MOD}\\$${2:Func}\""],
+    "description": "Register MOD$Func's attach \"MOD$Func\" \"hook\" chain with __resolve_hook() intrinsic."
+  },
+  "Attach": {
+    "prefix": ["att"],
+    "body": ["attach \"${1:MOD}\\$${2:Func}\" \"${3:hook}\""],
+    "description": "Rewrite calls and references to MODULE$Function to go through hook(). Preserves MODULE$Function in hook()."
+  },
+  "DFR": {
+    "prefix": ["dfr"],
+    "body": ["dfr \"${1:resolver}\" \"${2:method}\""],
+    "description": "(PIC only) Sets default dynamic function resolution resolver function. Rewrites MODULE$Function references in PIC to call resolver. ror13 method passes ror13 module and function hashes to resolver. strings method passes module and function stack strings to resolver."
+  },
+  "DFR Ext": {
+    "prefix": ["dfre"],
+    "body": ["dfr \"${1:resolver}\" \"${2:method}\" \"${3:M1, M2}\""],
+    "description": "(PIC only) Set dynamic function resolution resolver function for Win32 APIs from MODULE1 and MODULE2. This resolver has priority over the default resolver."
+  },
+  "Export Func": {
+    "prefix": ["ef"],
+    "body": ["exportfunc \"${1:func}\" \"${2:__tag_func}\""],
+    "description": "(PICO only) Export function from PICO and generate __tag_function intrinsic (used with PicoGetExport to find func pointer)."
+  },
+  "Filter Hooks": {
+    "prefix": ["fh"],
+    "body": ["filterhooks \\$${1:DLL}"],
+    "description": "Walk imports of $DLL or $OBJECT and remove registered hooks for APIs not in import table."
+  },
+  "Link Function": {
+    "prefix": ["lf"],
+    "body": ["linkfunc \"${1:symbol}\""],
+    "description": "Link (code) bytes on the stack to function symbol in object on stack."
+  },
+  "Make COFF": {
+    "prefix": ["mc"],
+    "body": ["make coff"],
+    "description": "Turn contents on stack into a COFF-exporter object."
+  },
+  "Make Object": {
+    "prefix": ["mo"],
+    "body": ["make object"],
+    "description": "Turn contents on stack into a PICO-exporter object."
+  },
+  "Make PIC": {
+    "prefix": ["mp"],
+    "body": ["make pic"],
+    "description": "Turn contents on stack into PIC-exporter object."
+  },
+  "Merge Library": {
+    "prefix": ["ml"],
+    "body": ["mergelib \"${1:lib}.x${2:##}.zip\""],
+    "description": "Merges each COFF file within zip archive to object on stack."
+  },
+  "Run Spec": {
+    "prefix": ["rs"],
+    "body": ["run \"${1:foo}.spec\""],
+    "description": "Run another .spec, using the same target, $VARs, and stack as the current script. Accepts positional arguments, passed as %1, %2, etc."
+  }
+}
