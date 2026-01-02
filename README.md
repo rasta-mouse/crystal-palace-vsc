@@ -6,14 +6,14 @@ This is a Visual Studio Code (VSC) extension that aims to provide an implementat
 
 The extension provides basic syntax highlighting for the various Crystal Palace commands.
 
-\!\[Syntax Highlighting\]\(images/syntax-hightlighting.png\)
+![Syntax Highlighting](images/syntax-hightlighting.png)
 
 ### Snippets
 
 It also provides the following snippets:
 
 | prefix | body |
---------------------
+|--------|------|
 | ah | addhook "MOD$Func" "hook" |
 | ahc | addhook "MOD$Func" |
 | att | attach "MOD$Func" "hook" |
