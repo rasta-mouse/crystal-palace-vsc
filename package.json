@@ -5,11 +5,12 @@
   "license": "MIT",
   "version": "0.0.1",
   "icon": "images/icon.png",
+  "publisher": "RastaMouse",
   "engines": {
     "vscode": "^1.107.0"
   },
   "author": {
-		"name": "Daniel Duggan",
+		"name": "Rasta Mouse",
 		"url": "https://x.com/_RastaMouse"
 	},
   "repository": {
