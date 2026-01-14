@@ -72,7 +72,7 @@
             },
             {
               "name": "support.type.language.option.spec",
-              "match": "\\+(optimize|disco|mutate|gofirst)\\b"
+              "match": "\\+(gofirst|optimize|disco|mutate|regdance|blockparty|shatter)\\b"
             },
             {
               "name": "invalid.illegal.make-argument.spec",
