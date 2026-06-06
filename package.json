@@ -3,7 +3,7 @@
   "displayName": "Crystal Palace",
   "description": "Language extension for Crystal Palace Specification files",
   "license": "MIT",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "icon": "images/icon.png",
   "publisher": "RastaMouse",
   "engines": {

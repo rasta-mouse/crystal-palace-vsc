@@ -55,7 +55,37 @@
     "keywords": {
       "patterns": [{
           "name": "keyword.control.spec",
-          "match": "\\b(addhook|attach|call|coffparse|dfr|disassemble|echo|export|exportfunc|filterhooks|fixbss|fixptrs|foreach|generate|import|load|link|linkfunc|merge|mergelib|next|optout|pack|patch|preplen|prepsum|preserve|protect|push|rc4|redirect|remap|resolve|run|set|setg|xor)\\b"
+          "match": "\\b(addhook|after|attach|before|call|coffparse|dfr|disassemble|echo|entry|export|exportfunc|filterhooks|fixbss|fixptrs|foreach|generate|import|load|link|linkfunc|linkpost|load|magic|merge|mergelib|meta|next|options|optout|pack|patch|pop|preplen|prepsum|preserve|protect|push|rc4|redirect|remap|resolve|rule|run|set|setg|strip|xor)\\b"
+        },
+        {
+          "name": "meta.command.ised.spec",
+          "begin": "\\bised\\b",
+          "beginCaptures": {
+            "0": {
+              "name": "keyword.control.ised.spec"
+            }
+          },
+          "end": "$",
+          "patterns": [
+            {
+              "name": "keyword.other.ised-verb.spec",
+              "match": "\\b(insert|replace)\\b"
+            },
+            {
+              "name": "support.type.language.option.spec",
+              "match": "\\+(first|last|before|after|split|safe)\\b"
+            },
+            {
+              "include": "#variables"
+            },
+            {
+              "include": "#strings"
+            },
+            {
+              "name": "invalid.illegal.ised-option.spec",
+              "match": "\\b(?!insert\\b|replace\\b)\\w+\\b"
+            }
+          ]
         },
         {
           "name": "meta.command.make.spec",
@@ -72,7 +102,7 @@
             },
             {
               "name": "support.type.language.option.spec",
-              "match": "\\+(gofirst|optimize|disco|mutate|regdance|blockparty|shatter)\\b"
+              "match": "\\+(gofirst|optimize|disco|mutate|regdance|blockparty|shatter|relax|unwind)\\b"
             },
             {
               "name": "invalid.illegal.make-argument.spec",
